@@ -10,7 +10,7 @@ view: xero_change_in_mrr {
   }
 
   dimension: contact_name {
-    label: "Contact Name"
+    label: "Client Group"
     type: string
     sql: ${TABLE}.contact_name ;;
   }
