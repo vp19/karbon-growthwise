@@ -13,6 +13,26 @@ view: invoices {
     sql: ${TABLE}.account_code ;;
   }
 
+  dimension: account_group {
+    group_label: "Account"
+    label: "Account Group"
+    type: string
+    sql: CASE WHEN ${account_code} = '135' THEN 'Compliance'
+           WHEN ${account_code} = '130' THEN 'SMSF'
+           WHEN ${account_code} = '124' THEN 'Compliance'
+           WHEN ${account_code} = '140' THEN 'Compliance'
+           WHEN ${account_code} = '110' THEN 'Management'
+           WHEN ${account_code} = '108' THEN 'Management'
+           WHEN ${account_code} = '109' THEN 'Management'
+           WHEN ${account_code} = '121' THEN 'Technology'
+           WHEN ${account_code} = '120' THEN 'Technology'
+           WHEN ${account_code} = '122' THEN 'Technology'
+           WHEN ${account_code} = '101' THEN 'Compliance'
+           ELSE 'Other'
+      END
+       ;;
+  }
+
   dimension: account_name {
     group_label: "Account"
     type: string
