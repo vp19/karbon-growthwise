@@ -11,3 +11,5 @@ explore: xero_mrr {}
 explore: xero_change_in_mrr {}
 
 explore: invoices {}
+
+explore:  xero_saas_metrics {}
