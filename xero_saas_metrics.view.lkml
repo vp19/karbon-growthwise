@@ -81,7 +81,7 @@ view: xero_saas_metrics {
     group_label: "SaaS Metrics"
     type: sum
     value_format_name: decimal_3
-    sql: ${TABLE}.ltv  / ${TABLE}.cac ;;
+    sql: ${TABLE}.ltv  / NULLIF(${TABLE}.cac,0) ;;
   }
 
   measure: months_to_recover_cac {
